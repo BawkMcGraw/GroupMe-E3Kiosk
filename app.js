@@ -33,7 +33,6 @@ class Server {
 
         this.res.writeHead(200);
         this.res.end();
-        Functions.load();
         function send() {
             console.log("starting send");
             const resMessage = Bot.checkMessage(reqMessage);
