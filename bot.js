@@ -109,7 +109,7 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                return eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendo+' '+sonyt;
+                                return eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendot+' '+sonyt;
                             }
                             if (ea.test(mText)) {
                                 return eat;
