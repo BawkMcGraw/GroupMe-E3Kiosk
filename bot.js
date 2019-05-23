@@ -4,6 +4,7 @@ var fs = require('fs');
 const https = require('https');
 console.log('Loaded... ');
 var date = new Date().getDate();
+var groupid;
 
 class Bot {
     /**
@@ -16,6 +17,7 @@ class Bot {
     static checkMessage(message) {
         const mText = message.text;
         const messageName = message.name;
+        groupid = message.group_id;
 
         // BASIC EXPRESSIONS
         const e3ex = /e3/i;
@@ -144,7 +146,7 @@ class Bot {
 
         var botId = "4720a34d2e45e88a60406cfa7e";
 
-        if (/41279538/.test(mText.group_id)) {
+        if (/41279538/.test(groupid)) {
             botId = '26950a2d98969fcfb30ca4a3e5';
         }
 
