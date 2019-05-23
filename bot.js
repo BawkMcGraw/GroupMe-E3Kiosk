@@ -143,48 +143,33 @@ class Bot {
         }
         return null;
     };
-    /**
-     * Sends a message to GroupMe with a POST request.
-     *
-     * @static
-     * @param {string} messageText A message to send to chat
-     * @return {undefined}
-     */
-    static sendMessage(messageText) {
-        // BotId's are generally saved in the env, but heroku makes this kind of weird, so I store it as a const.
-        // var botId0 = process.env.BOT_ID;
+    static sendMessage(mText) {
+
         const botId = "4720a34d2e45e88a60406cfa7e";
-        console.log('groupid')
 
         const options = {
             hostname: 'api.groupme.com',
             path: '/v3/bots/post',
-            method: 'POST'
+            method :'POST'
         };
         const body = {
             bot_id: botId,
-            text: messageText
+            text: mText
         };
-
-        // Make the POST request to GroupMe with the http module
-        const botRequest = https.request(options, function(response) {
+        const botReq = https.request(options, function(response) {
             if (response.statusCode !== 202) {
-                console.log('Rejecting bad status code ' + response.statusCode);
+                console.log('Bad status '+response.statusCode);
             }
         });
 
-        // On error
-        botRequest.on('error', function(error) {
-            console.log('Error posting message ' + JSON.stringify(error));
+        botReq.on('error', function(err) {
+            console.log('Error '+JSON.stringify(err));
         });
 
-        // On timeout
-        botRequest.on('timeout', function(error) {
-            console.log('Timeout posting message ' + JSON.stringify(error));
+        botReq.on('timeout', function(err) {
+            console.log('Timeout '+JSON.stringify(err));
         });
-
-        // Finally, send the body to GroupMe as a string
-        botRequest.end(JSON.stringify(body));
+        botReq.end(JSON.stringify(body));
     };
 };
 module.exports = Bot;
