@@ -147,7 +147,7 @@ class Bot {
         var botId = "4720a34d2e45e88a60406cfa7e";
 
         if (/41279538/.test(groupid)) {
-            botId = '26950a2d98969fcfb34a3e5';
+            botId = '26950a2d98969fcfb30ca4a3e5';
         }
 
         const options = {
