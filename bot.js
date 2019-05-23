@@ -72,7 +72,7 @@ class Bot {
                             return startt;
                         }
                         // DATE TESTS
-                        if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText) || all.test(mText) || every.test(mText)) {
+                        if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText)) {
                             if (sat.test(mText)) {
                                 return eat;
                             }
