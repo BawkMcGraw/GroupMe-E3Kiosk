@@ -109,6 +109,8 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
+                                console.log('all or every');
+                                console.log(eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendot+' '+sonyt);
                                 return eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendot+' '+sonyt;
                             }
                             if (ea.test(mText)) {
