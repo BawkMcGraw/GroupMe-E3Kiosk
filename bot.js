@@ -14,7 +14,7 @@ class Bot {
      * @return {string}
      */
     static checkMessage(message) {
-        const messageText = message.text;
+        const mText = message.text;
         const messageName = message.name;
 
         // BASIC EXPRESSIONS
@@ -57,34 +57,34 @@ class Bot {
         const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0'
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
-        if (messageText)
+        if (mText)
         {
             if (nameex.test(messageName)) {
                 console.log('bot trigger by bot... ignoring.')
                 return null;
             }
             else {
-                if (name.test(messageText)) {
-                    if (e3ex.test(messageText)) {
-                        if (messageText.test(start) || messageText.test(begin)) {
+                if (name.test(mText)) {
+                    if (e3ex.test(mText)) {
+                        if (start.test(mText) || begin.test(mText)) {
                             return startt;
                         }
                         // DATE TESTS
-                        if (messageText.test(sat) || messageText.test(sun) || messageText.test(mon) || messageText.test(tues) || messageText.test(today) || messageText.test(tomorrow) || messageText.test(all) || messageText.test(every)) {
-                            if (messageText.test(sat)) {
+                        if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText) || all.test(mText) || every.test(mText)) {
+                            if (sat.test(mText)) {
                                 return eat;
                             }
-                            if (messageText.test(sun)) {
+                            if (sun.test(mText)) {
                                 return microt+' '+bethesdat;
                             }
-                            if (messageText.test(mon)) {
+                            if (mon.test(mText)) {
                                 return ubisoftt+' '+squaret;
                             }
-                            if (messageText.test(tues)) {
+                            if (tues.test(mText)) {
                                 return nintendot;
                             }
-                            if (messageText.test(today) || messageText.test(tomorrow)) {
-                                if (messageText.test(tomorrow)) {
+                            if (today.test(mText) || tomorrow.test(mText)) {
+                                if (tomorrow.test(mText)) {
                                     date = date + 1;
                                 }
                                 if (date == 8) {
@@ -106,28 +106,28 @@ class Bot {
                         }
                         // COMPANY TESTS
                         else {
-                            if (messageText.test(all) || messageText.test(every)) {
+                            if (all.test(mText) || every.test(mText)) {
                                 return eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendo+' '+sonyt;
                             }
-                            if (messageText.test(ea)) {
+                            if (ea.test(mText)) {
                                 return eat;
                             }
-                            if (messageText.test(micro) || messageText.test(xbox)) {
+                            if (micro.test(mText) || xbox.test(mText)) {
                                 return microt;
                             }
-                            if (messageText.test(bethesda)) {
+                            if (bethesda.test(mText)) {
                                 return bethesdat;
                             }
-                            if (messageText.test(ubisoft)) {
+                            if (ubisoft.test(mText)) {
                                 return ubisoftt;
                             }
-                            if (messageText.test(square) || messageText.test(enix)) {
+                            if (square.test(mText) || enix.test(mText)) {
                                 return squaret;
                             }
-                            if (messageText.test(nintendo)) {
+                            if (nintendo.test(mText)) {
                                 return nintendot;
                             }
-                            if (messageText.test(sony)) {
+                            if (sony.test(mText)) {
                                 return sonyt;
                             }
                             else {
