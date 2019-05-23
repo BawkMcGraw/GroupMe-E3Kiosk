@@ -3,7 +3,6 @@ require('dotenv').config();
 var fs = require('fs');
 const https = require('https');
 console.log('Loaded... ');
-console.log(botId);
 var date = new Date().getDate();
 
 class Bot {
