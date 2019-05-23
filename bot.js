@@ -56,8 +56,6 @@ class Bot {
         const nintendot = 'Nintendo on Tuesday, 9AM PT, https://www.twitch.tv/nintendo'
         const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0'
 
-        groupid = message.group_id;
-
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (messageText)
         {
