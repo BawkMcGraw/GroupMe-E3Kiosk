@@ -77,10 +77,10 @@ class Bot {
                                 return eat;
                             }
                             if (sun.test(mText)) {
-                                return microt+' '+bethesdat;
+                                return microt+'\n'+bethesdat;
                             }
                             if (mon.test(mText)) {
-                                return ubisoftt+' '+squaret;
+                                return ubisoftt+'\n'+squaret;
                             }
                             if (tues.test(mText)) {
                                 return nintendot;
@@ -93,10 +93,10 @@ class Bot {
                                     return eat;
                                 }
                                 if (date == 9) {
-                                    return microt+' '+bethesdat;
+                                    return microt+'\n'+bethesdat;
                                 }
                                 if (date == 10) {
-                                    return ubisoftt+' '+squaret;
+                                    return ubisoftt+'\n'+squaret;
                                 }
                                 if (date == 11) {
                                     return nintendot;
@@ -109,9 +109,7 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                console.log('all or every');
-                                console.log(eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendot+' '+sonyt);
-                                return eat+' '+microt+' '+bethesdat+' '+ubisoftt+' '+squaret+' '+nintendot+' '+sonyt;
+                                return eat+'\n'+microt+'\n'+bethesdat+'\n'+ubisoftt+'\n'+squaret+'\n'+nintendot+'\n'+sonyt;
                             }
                             if (ea.test(mText)) {
                                 return eat;
