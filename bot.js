@@ -31,7 +31,10 @@ class Bot {
         const ea = /ea/i;
         const micro = /micro/i;
         const xbox = /xbox/i;
+        const digital = /digital/i;
+        const devolver = /devolver/i;
         const bethesda = /bethesda/i;
+        const pcgame = /pc/i;
         const ubisoft = /ubisoft/i;
         const square = /square/i;
         const enix = /enix/i;
@@ -51,14 +54,16 @@ class Bot {
         const every = /every/i;
 
         // SCHEDULINGS
-        const startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.'
-        const eat = 'EA on Saturday, time unknown, https://www.twitch.tv/ea'
-        const microt = 'Microsoft on Sunday, 1PM PT, https://www.twitch.tv/xbox'
-        const bethesdat = 'Bethesda on Sunday, 5:30PM PT, https://www.twitch.tv/bethesda'
-        const ubisoftt = 'Ubisoft on Monday, 1PM PT, https://www.twitch.tv/bethesda'
-        const squaret = 'Square Enix on Monday, 6PM PT, https://www.twitch.tv/squareenix'
-        const nintendot = 'Nintendo on Tuesday, 9AM PT, https://www.twitch.tv/nintendo'
-        const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0'
+        const startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
+        const eat = 'EA on Saturday, 9:30AM PT, https://www.twitch.tv/ea';
+        const microt = 'Microsoft on Sunday, 1PM PT, https://www.twitch.tv/xbox';
+        const digitalt = 'Devolver Digital on Sunday, 7PM PT, https://www.twitch.tv/devolverdigital';
+        const bethesdat = 'Bethesda on Sunday, 5:30PM PT, https://www.twitch.tv/bethesda';
+        const pcgamet = 'PC Gaming Show on Monday, 10AM PT, https://www.twitch.tv/pcgamer';
+        const ubisoftt = 'Ubisoft on Monday, 1PM PT, https://www.twitch.tv/bethesda';
+        const squaret = 'Square Enix on Monday, 6PM PT, https://www.twitch.tv/squareenix';
+        const nintendot = 'Nintendo on Tuesday, 9AM PT, https://www.twitch.tv/nintendo';
+        const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
@@ -82,10 +87,10 @@ class Bot {
                                 return eat;
                             }
                             if (sun.test(mText)) {
-                                return microt+'\n\n'+bethesdat;
+                                return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
                             }
                             if (mon.test(mText)) {
-                                return ubisoftt+'\n\n'+squaret;
+                                return ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet;
                             }
                             if (tues.test(mText)) {
                                 return nintendot;
@@ -98,10 +103,10 @@ class Bot {
                                     return eat;
                                 }
                                 if (date == 9) {
-                                    return microt+'\n\n'+bethesdat;
+                                    return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
                                 }
                                 if (date == 10) {
-                                    return ubisoftt+'\n\n'+squaret;
+                                    return ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet;
                                 }
                                 if (date == 11) {
                                     return nintendot;
@@ -114,7 +119,7 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                return eat+'\n\n'+microt+'\n\n'+bethesdat+'\n\n'+ubisoftt+'\n\n'+squaret+'\n\n'+nintendot+'\n\n'+sonyt;
+                                return eat+'\n\n'+microt+'\n\n'+bethesdat+'\n\n'+digitalt+'\n\n'+ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet+'\n\n'+nintendot+'\n\n'+sonyt;
                             }
                             if (ea.test(mText)) {
                                 return eat;
@@ -125,11 +130,17 @@ class Bot {
                             if (bethesda.test(mText)) {
                                 return bethesdat;
                             }
+                            if (digital.test(mText) || devolver.test(mText)) {
+                                return digitalt;
+                            }
                             if (ubisoft.test(mText)) {
                                 return ubisoftt;
                             }
                             if (square.test(mText) || enix.test(mText)) {
                                 return squaret;
+                            }
+                            if (pcgame.test(mText)) {
+                                return pcgamet;
                             }
                             if (nintendo.test(mText)) {
                                 return nintendot;
