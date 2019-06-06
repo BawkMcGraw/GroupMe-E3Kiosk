@@ -20,7 +20,7 @@ class Bot {
             var minute = new Date().getMinutes();
             console.log('minute = ' + minute);
             var d = new Date().getDate();
-            hour = parseInt(hour) - 7;
+            hour = parseInt(hour) - 5;
             if (hour < 0) {
                 hour = hour + 24;
             }
@@ -31,7 +31,7 @@ class Bot {
             if (d == 6 && time >= 15.8 && time < 17) {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
-            if (d > 8) {
+            if (d > 8g) {
                 ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
             if (d == 8 && time > 14) {
