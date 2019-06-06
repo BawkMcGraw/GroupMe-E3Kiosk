@@ -18,17 +18,17 @@ class Bot {
         function NowThen() {
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
-            var minuted = (parseInt(minute)/60).toFixed(1);
-            console.log('minute = ' + minuted);
+            console.log('minute = ' + minute);
             var d = new Date().getDate();
             hour = parseInt(hour) - 7;
             if (hour < 0) {
                 hour = hour + 24;
             }
-            var time = hour + minuted;
+            var time = parseInt(hour, 10) + (parseInt(minute, 10)/60);
+            time = time.toFixed(1);
             console.log('NowThen time is '+d+' '+hour+' '+minuted+' '+time);
             // Saturday
-            if (d == 8 && time >= 11.5 && time < 14) {
+            if (d == 8 && time >= 15.8 && time < 17) {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
             if (d > 4) {
