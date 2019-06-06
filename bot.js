@@ -19,21 +19,23 @@ class Bot {
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
             minute = this/60;
-            var time = hour + minute;
+            console.log('minute = ' + minute);
             var d = new Date().getDate();
             hour = this - 7;
             if (hour < 0) {
                 hour = this + 24;
             }
+            var time = hour + minute;
+            console.log('NowThen time is '+d+' '+time);
             // Saturday
             if (d == 8 && time >= 11.5 && time < 14) {
-                eat = eat[0] + 'started at' + eat[2] + 'watch live:' + eat[3];
+                ear = eat[0] + 'started at' + eat[2] + 'watch live:' + eat[3];
             }
             if (d > 8) {
-                eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
             }
             if (d == 6 && time > 14) {
-                eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
             }
         }
         const mText = message.text;
