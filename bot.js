@@ -31,11 +31,11 @@ class Bot {
             if (d == 8 && time >= 11.5 && time < 14) {
                 ear = eat[0] + 'started at' + eat[2] + 'watch live:' + eat[3];
             }
-            if (d > 8) {
+            if (d > 4) {
                 ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
             }
-            if (d == 6 && time > 14) {
-                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+            if (d == 8 && time > 14) {
+                ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
         }
         const mText = message.text;
@@ -78,7 +78,7 @@ class Bot {
 
         // BASIC
         var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        var eat = ['EA',' on Saturday,',' 11:30AM CST - 6:30PM CEST',' https://twitch.tv/ea'];
+        var eat = ['EA ','on Saturday, ','11:30AM CST - 6:30PM CEST ','https://twitch.tv/ea'];
         var microt;
         var digitalt;
         var bethesdat;
