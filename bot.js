@@ -28,10 +28,10 @@ class Bot {
             time = time.toFixed(1);
             console.log('NowThen time is '+d+' '+hour+' '+minute+' '+time);
             // Saturday
-            if (d == 8 && time >= 15.8 && time < 17) {
+            if (d == 6 && time >= 15.8 && time < 17) {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
-            if (d > 4) {
+            if (d > 8) {
                 ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
             if (d == 8 && time > 14) {
