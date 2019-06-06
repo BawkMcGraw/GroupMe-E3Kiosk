@@ -28,10 +28,10 @@ class Bot {
             time = time.toFixed(1);
             
             // Saturday
-            if (d == 8 && time >= 15.8 && time < 17) {
+            if (d == 8 && time >= 11.5 && time < 14) {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
-            if ((d == 8 && time > 14) || d > 5) {
+            if ((d == 6 && time > 14) || d > 6) {
                 ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
         }
