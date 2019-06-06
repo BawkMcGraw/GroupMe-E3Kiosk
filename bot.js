@@ -26,13 +26,13 @@ class Bot {
                 hour = hour + 24;
             }
             var time = hour + minuted;
-            console.log('NowThen time is '+d+' '+time);
+            console.log('NowThen time is '+d+' '+hour+' '+minuted+' '+time);
             // Saturday
             if (d == 8 && time >= 11.5 && time < 14) {
-                ear = eat[0] + 'started at' + eat[2] + 'watch live:' + eat[3];
+                ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
             if (d > 4) {
-                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
             if (d == 8 && time > 14) {
                 ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
