@@ -21,7 +21,7 @@ class Bot {
             var minuted = (parseInt(minute)/60).toFixed(1);
             console.log('minute = ' + minuted);
             var d = new Date().getDate();
-            hour = hour - 7;
+            hour = parseInt(hour) - 7;
             if (hour < 0) {
                 hour = hour + 24;
             }
@@ -32,7 +32,7 @@ class Bot {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
             }
             if (d > 4) {
-                ear = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch: ' + eat[3];
+                ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
             }
             if (d == 8 && time > 14) {
                 ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
