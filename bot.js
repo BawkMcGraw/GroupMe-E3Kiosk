@@ -18,14 +18,14 @@ class Bot {
         function NowThen() {
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
-            minute = (parseInt(this)/60).toFixed(1);
-            console.log('minute = ' + minute);
+            var minuted = (parseInt(minute)/60).toFixed(1);
+            console.log('minute = ' + minuted);
             var d = new Date().getDate();
-            hour = this - 7;
+            hour = hour - 7;
             if (hour < 0) {
-                hour = this + 24;
+                hour = hour + 24;
             }
-            var time = hour + minute;
+            var time = hour + minuted;
             console.log('NowThen time is '+d+' '+time);
             // Saturday
             if (d == 8 && time >= 11.5 && time < 14) {
