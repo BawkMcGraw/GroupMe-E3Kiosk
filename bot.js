@@ -26,7 +26,7 @@ class Bot {
             }
             var time = parseInt(hour, 10) + (parseInt(minute, 10)/60);
             time = time.toFixed(1);
-            console.log('NowThen time is '+d+' '+hour+' '+minuted+' '+time);
+            console.log('NowThen time is '+d+' '+hour+' '+minute+' '+time);
             // Saturday
             if (d == 8 && time >= 15.8 && time < 17) {
                 ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
