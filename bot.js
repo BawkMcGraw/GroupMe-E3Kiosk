@@ -76,7 +76,7 @@ class Bot {
 
         // BASIC
         var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        var eat = ['EA', 'on Saturday,','11:30AM CST - 6:30PM CEST','https://twitch.tv/ea'];
+        var eat = ['EA',' on Saturday,',' 11:30AM CST - 6:30PM CEST',' https://twitch.tv/ea'];
         var microt;
         var digitalt;
         var bethesdat;
