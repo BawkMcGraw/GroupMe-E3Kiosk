@@ -55,14 +55,14 @@ class Bot {
 
         // SCHEDULINGS
         const startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        const eat = 'EA on Saturday, 9:30AM PT, https://www.twitch.tv/ea';
-        const microt = 'Microsoft on Sunday, 1PM PT, https://www.twitch.tv/xbox';
-        const digitalt = 'Devolver Digital on Sunday, 7PM PT, https://www.twitch.tv/devolverdigital';
-        const bethesdat = 'Bethesda on Sunday, 5:30PM PT, https://www.twitch.tv/bethesda';
-        const pcgamet = 'PC Gaming Show on Monday, 10AM PT, https://www.twitch.tv/pcgamer';
-        const ubisoftt = 'Ubisoft on Monday, 1PM PT, https://www.twitch.tv/bethesda';
-        const squaret = 'Square Enix on Monday, 6PM PT, https://www.twitch.tv/squareenix';
-        const nintendot = 'Nintendo on Tuesday, 9AM PT, https://www.twitch.tv/nintendo';
+        const eat = 'EA on Saturday, 9:30AM PT - 6:30PM CEST, https://www.twitch.tv/ea';
+        const microt = 'Microsoft on Sunday, 1PM PT - 10PM CEST, https://www.twitch.tv/xbox';
+        const digitalt = 'Devolver Digital on Sunday, 7PM PT - 4AM CEST, https://www.twitch.tv/devolverdigital';
+        const bethesdat = 'Bethesda on Sunday, 5:30PM PT - 3:30AM CEST, https://www.twitch.tv/bethesda';
+        const pcgamet = 'PC Gaming Show on Monday, 10AM PT - 7PM CEST, https://www.twitch.tv/pcgamer';
+        const ubisoftt = 'Ubisoft on Monday, 1PM PT - 10PM CEST, https://www.twitch.tv/bethesda';
+        const squaret = 'Square Enix on Monday, 6PM PT - 3AM CEST, https://www.twitch.tv/squareenix';
+        const nintendot = 'Nintendo on Tuesday, 9AM PT - 6PM CEST, https://www.twitch.tv/nintendo';
         const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
