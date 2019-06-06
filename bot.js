@@ -18,7 +18,7 @@ class Bot {
         function NowThen() {
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
-            minute = this/60;
+            minute = (parseInt(this)/60).toFixed(1);
             console.log('minute = ' + minute);
             var d = new Date().getDate();
             hour = this - 7;
