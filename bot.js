@@ -86,6 +86,9 @@ class Bot {
         var nintendot;
         var sonyt;
 
+        // RESULT
+        var ear = eat[0] + eat[1] + eat[2] + eat[3];
+
         // STARTS
         const starts = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
         const eas = 'EA on Saturday, 9:30AM PT - 6:30PM CEST, https://www.twitch.tv/ea';
@@ -98,29 +101,6 @@ class Bot {
         const nintendos = 'Nintendo on Tuesday, 9AM PT - 6PM CEST, https://www.twitch.tv/nintendo';
         const sonys = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
-        // DURING-EVENT
-        const startd = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        const ead = 'EA already started, 9:30AM PT - 6:30PM CEST, watch live: https://www.twitch.tv/ea';
-        const microd = 'Microsoft already started, 1PM PT - 10PM CEST, watch live: https://www.twitch.tv/xbox';
-        const digitald = 'Devolver already started, 7PM PT - 4AM CEST, watch live: https://www.twitch.tv/devolverdigital';
-        const bethesdad = 'Bethesda already started, 5:30PM PT - 3:30AM CEST, watch live: https://www.twitch.tv/bethesda';
-        const pcgamed = 'PC Gaming Show already started, 10AM PT - 7PM CEST, watch live: https://www.twitch.tv/pcgamer';
-        const ubisoftd = 'Ubisoft already started, 1PM PT - 10PM CEST, watch live: https://www.twitch.tv/bethesda';
-        const squared = 'Square Enix already started, 6PM PT - 3AM CEST, watch live: https://www.twitch.tv/squareenix';
-        const nintendod = 'Nintendo already started, 9AM PT - 6PM CEST, watch live: https://www.twitch.tv/nintendo';
-        const sonyd = 'Sony will not be at E3, instead they just did a bunch of directs: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
-
-        // POST-EVENT
-        const startp = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        const eap = 'EA finished presenting, you might find the playback on twitch: https://www.twitch.tv/ea';
-        const microp = 'Microsoft finished presenting, you might find the playback on twitch: https://www.twitch.tv/xbox';
-        const digitalp = 'Devolver Digital finished presenting, you might find the playback on twitch: https://www.twitch.tv/devolverdigital';
-        const bethesdap = 'Bethesda finished presenting, you might find the playback on twitch: https://www.twitch.tv/bethesda';
-        const pcgamep = 'PC Gaming Show finished presenting, you might find the playback on twitch: https://www.twitch.tv/pcgamer';
-        const ubisoftp = 'Ubisoft finished presenting, you might find the playback on twitch: https://www.twitch.tv/bethesda';
-        const squarep = 'Square Enix finished presenting, you might find the playback on twitch: https://www.twitch.tv/squareenix';
-        const nintendop  = 'Nintendo finished presenting, you might find the playback on twitch: https://www.twitch.tv/nintendo';
-        const sonyp = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
@@ -142,7 +122,7 @@ class Bot {
                         // DATE TESTS
                         if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText)) {
                             if (sat.test(mText)) {
-                                return eat;
+                                return ear;
                             }
                             if (sun.test(mText)) {
                                 return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
@@ -158,7 +138,7 @@ class Bot {
                                     date = date + 1;
                                 }
                                 if (date == 8) {
-                                    return eat;
+                                    return ear;
                                 }
                                 if (date == 9) {
                                     return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
@@ -177,10 +157,10 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                return eat+'\n\n'+microt+'\n\n'+bethesdat+'\n\n'+digitalt+'\n\n'+ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet+'\n\n'+nintendot+'\n\n'+sonyt;
+                                return ear+'\n\n'+microt+'\n\n'+bethesdat+'\n\n'+digitalt+'\n\n'+ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet+'\n\n'+nintendot+'\n\n'+sonyt;
                             }
                             if (ea.test(mText)) {
-                                return eat;
+                                return ear;
                             }
                             if (micro.test(mText) || xbox.test(mText)) {
                                 return microt;
