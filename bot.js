@@ -15,6 +15,27 @@ class Bot {
      * @return {string}
      */
     static checkMessage(message) {
+        function NowThen() {
+            var hour = new Date().getHours();
+            var minute = new Date().getMinutes();
+            minute = this/60;
+            var time = hour + minute;
+            var d = new Date().getDate();
+            hour = this - 7;
+            if (hour < 0) {
+                hour = this + 24;
+            }
+            // Saturday
+            if (d == 8 && time >= 11.5 && time < 14) {
+                eat = eat[0] + 'started at' + eat[2] + 'watch live:' + eat[3];
+            }
+            if (d > 8) {
+                eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+            }
+            if (d == 8 && time > 14) {
+                eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
+            }
+        }
         const mText = message.text;
         const messageName = message.name;
         groupid = message.group_id;
@@ -53,28 +74,65 @@ class Bot {
         const all = /all/i;
         const every = /every/i;
 
-        // SCHEDULINGS
-        const startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        const eat = 'EA on Saturday, 9:30AM PT - 6:30PM CEST, https://www.twitch.tv/ea';
-        const microt = 'Microsoft on Sunday, 1PM PT - 10PM CEST, https://www.twitch.tv/xbox';
-        const digitalt = 'Devolver Digital on Sunday, 7PM PT - 4AM CEST, https://www.twitch.tv/devolverdigital';
-        const bethesdat = 'Bethesda on Sunday, 5:30PM PT - 3:30AM CEST, https://www.twitch.tv/bethesda';
-        const pcgamet = 'PC Gaming Show on Monday, 10AM PT - 7PM CEST, https://www.twitch.tv/pcgamer';
-        const ubisoftt = 'Ubisoft on Monday, 1PM PT - 10PM CEST, https://www.twitch.tv/bethesda';
-        const squaret = 'Square Enix on Monday, 6PM PT - 3AM CEST, https://www.twitch.tv/squareenix';
-        const nintendot = 'Nintendo on Tuesday, 9AM PT - 6PM CEST, https://www.twitch.tv/nintendo';
-        const sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
+        // BASIC
+        var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
+        var eat = ['EA', 'on Saturday,','11:30AM CST - 6:30PM CEST','https://twitch.tv/ea'];
+        var microt;
+        var digitalt;
+        var bethesdat;
+        var pcgamet;
+        var ubisoftt;
+        var squaret;
+        var nintendot;
+        var sonyt;
+
+        // STARTS
+        const starts = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
+        const eas = 'EA on Saturday, 9:30AM PT - 6:30PM CEST, https://www.twitch.tv/ea';
+        const micros = 'Microsoft on Sunday, 1PM PT - 10PM CEST, https://www.twitch.tv/xbox';
+        const digitals = 'Devolver Digital on Sunday, 7PM PT - 4AM CEST, https://www.twitch.tv/devolverdigital';
+        const bethesdas = 'Bethesda on Sunday, 5:30PM PT - 3:30AM CEST, https://www.twitch.tv/bethesda';
+        const pcgames = 'PC Gaming Show on Monday, 10AM PT - 7PM CEST, https://www.twitch.tv/pcgamer';
+        const ubisofts = 'Ubisoft on Monday, 1PM PT - 10PM CEST, https://www.twitch.tv/bethesda';
+        const squares = 'Square Enix on Monday, 6PM PT - 3AM CEST, https://www.twitch.tv/squareenix';
+        const nintendos = 'Nintendo on Tuesday, 9AM PT - 6PM CEST, https://www.twitch.tv/nintendo';
+        const sonys = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
+
+        // DURING-EVENT
+        const startd = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
+        const ead = 'EA already started, 9:30AM PT - 6:30PM CEST, watch live: https://www.twitch.tv/ea';
+        const microd = 'Microsoft already started, 1PM PT - 10PM CEST, watch live: https://www.twitch.tv/xbox';
+        const digitald = 'Devolver already started, 7PM PT - 4AM CEST, watch live: https://www.twitch.tv/devolverdigital';
+        const bethesdad = 'Bethesda already started, 5:30PM PT - 3:30AM CEST, watch live: https://www.twitch.tv/bethesda';
+        const pcgamed = 'PC Gaming Show already started, 10AM PT - 7PM CEST, watch live: https://www.twitch.tv/pcgamer';
+        const ubisoftd = 'Ubisoft already started, 1PM PT - 10PM CEST, watch live: https://www.twitch.tv/bethesda';
+        const squared = 'Square Enix already started, 6PM PT - 3AM CEST, watch live: https://www.twitch.tv/squareenix';
+        const nintendod = 'Nintendo already started, 9AM PT - 6PM CEST, watch live: https://www.twitch.tv/nintendo';
+        const sonyd = 'Sony will not be at E3, instead they just did a bunch of directs: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
+
+        // POST-EVENT
+        const startp = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
+        const eap = 'EA finished presenting, you might find the playback on twitch: https://www.twitch.tv/ea';
+        const microp = 'Microsoft finished presenting, you might find the playback on twitch: https://www.twitch.tv/xbox';
+        const digitalp = 'Devolver Digital finished presenting, you might find the playback on twitch: https://www.twitch.tv/devolverdigital';
+        const bethesdap = 'Bethesda finished presenting, you might find the playback on twitch: https://www.twitch.tv/bethesda';
+        const pcgamep = 'PC Gaming Show finished presenting, you might find the playback on twitch: https://www.twitch.tv/pcgamer';
+        const ubisoftp = 'Ubisoft finished presenting, you might find the playback on twitch: https://www.twitch.tv/bethesda';
+        const squarep = 'Square Enix finished presenting, you might find the playback on twitch: https://www.twitch.tv/squareenix';
+        const nintendop  = 'Nintendo finished presenting, you might find the playback on twitch: https://www.twitch.tv/nintendo';
+        const sonyp = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
         {
             if (nameex.test(messageName)) {
-                console.log('bot trigger by bot... ignoring.')
+                console.log('bot triggered by bot... ignoring.')
                 return null;
             }
             else {
                 if (name.test(mText)) {
                     if (e3ex.test(mText)) {
+                        NowThen();
                         if (start.test(mText) || begin.test(mText)) {
                             return startt;
                         }
