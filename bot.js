@@ -32,7 +32,7 @@ class Bot {
             if (d > 8) {
                 eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
             }
-            if (d == 8 && time > 14) {
+            if (d == 6 && time > 14) {
                 eat = eat[0] + 'has already performed,' + eat[2] + 'you might find playback on twitch:' + eat[3];
             }
         }
@@ -150,6 +150,9 @@ class Bot {
                                     return nintendot;
                                 }
                                 else {
+                                    if (date > 11) {
+                                        return 'All events have concluded'
+                                    }
                                     return 'There are no events'
                                 }
                             }
