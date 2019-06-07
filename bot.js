@@ -116,7 +116,6 @@ class Bot {
             else {
                 if (name.test(mText)) {
                     if (e3ex.test(mText)) {
-                        NowThen();
                         if (start.test(mText) || begin.test(mText)) {
                             return startt;
                         }
