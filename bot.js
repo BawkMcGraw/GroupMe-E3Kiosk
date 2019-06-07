@@ -188,7 +188,7 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                return ear+'\n\n'+micror+'\n\n'+bethesdar+'\n\n'+digitalr+'\n\n'+ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer+'\n\n'+nintendor+'\n\n'+sonyt;
+                                return ear+'\n\n'+micror+'\n\n'+bethesdar+'\n\n'+digitalr+'\n\n'+ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer+'\n\n'+nintendor+'\n\n'+sonyt+'\n\n'+googler;
                             }
                             if (ea.test(mText)) {
                                 return ear;
@@ -216,6 +216,9 @@ class Bot {
                             }
                             if (sony.test(mText)) {
                                 return sonyt;
+                            }
+                            if (google.test(mText) || stadia.test(mText)) {
+                                return googler;
                             }
                             else {
                                 return 'You can ask for "all", "every", "today", "tomorrow", or a specific day of the week, or company.'
