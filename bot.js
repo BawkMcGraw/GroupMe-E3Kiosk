@@ -18,7 +18,7 @@ class Bot {
         function NowThen(eventd) {
             var started = 'started at ';
             var watch = 'watch live: ';
-            var already = 'has already performed, ';
+            var already = 'has already presented, ';
             var find = 'you might find playback on youtube: ';
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
