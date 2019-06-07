@@ -16,6 +16,7 @@ class Bot {
      */
     static checkMessage(message) {
         function NowThen(eventd) {
+            console.log(eventd);
             var started = 'started at ';
             var watch = 'watch live: ';
             var already = 'has already performed, ';
