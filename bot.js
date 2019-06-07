@@ -97,14 +97,14 @@ class Bot {
         var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // FORMATTED
-        var ear = NowThen(eat);
-        var micror = NowThen(microt);
-        var digitalr = NowThen(digitalt);
-        var bethesdar = NowThen(bethesdat);
-        var pcgamer = NowThen(pcgamet);
-        var ubisoftr = NowThen(ubisoftt);
-        var squarer = NowThen(squaret);
-        var nintendor = NowThen(nintendot);
+        let ear = NowThen(eat);
+        let micror = NowThen(microt);
+        let digitalr = NowThen(digitalt);
+        let bethesdar = NowThen(bethesdat);
+        let pcgamer = NowThen(pcgamet);
+        let ubisoftr = NowThen(ubisoftt);
+        let squarer = NowThen(squaret);
+        let nintendor = NowThen(nintendot);
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
