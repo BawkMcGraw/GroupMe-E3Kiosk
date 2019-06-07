@@ -68,11 +68,14 @@ class Bot {
         const square = /square/i;
         const enix = /enix/i;
         const nintendo = /nintendo/i;
+        const google = /google/i;
+        const stadia = /stadia/i;
         const sony = /sony/i;
 
         // DATE EXPRESSIONS
         const start = /start/i;
         const begin = /begin/i;
+        const thurs = /thursday/i;
         const sat = /saturday/i;
         const sun = /sunday/i;
         const mon = /monday/i;
@@ -92,17 +95,19 @@ class Bot {
         var ubisoftt = ['Ubisoft ','on Monday ','3PM CST - 10PM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/channel/UCBMvc6jvuTxH6TNo9ThpYjg',10,15];
         var squaret = ['Square Enix ','on Monday, ','8PM CST - 3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
         var nintendot = ['Nintendo ','on Tuesday, ','11AM CST - 6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
+        var googlet = ['Google Stadia ','on Thursday, ','11AM CST - 6PM CEST, ','https://www.youtube.com/watch?v=k-BbW6zAjL0','https://www.youtube.com/watch?v=k-BbW6zAjL0',6,11];
         var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // FORMATTED
-        let ear;
-        let micror;
-        let digitalr;
-        let bethesdar;
-        let pcgamer;
-        let ubisoftr;
-        let squarer;
+        var ear;
+        var micror;
+        var digitalr;
+        var bethesdar;
+        var pcgamer;
+        var ubisoftr;
+        var squarer;
         var nintendor;
+        var googler;
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
@@ -122,6 +127,7 @@ class Bot {
                         ubisoftr = NowThen(ubisoftt);
                         squarer = NowThen(squaret);
                         nintendor = NowThen(nintendot);
+                        googler = NowThen(googlet);
                         if (start.test(mText) || begin.test(mText)) {
                             return startt;
                         }
@@ -129,7 +135,10 @@ class Bot {
                         //    return 'What? You think this is fucking pictionary? I don\'t have eyes.'
                         //}
                         // DATE TESTS
-                        if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText)) {
+                        if (sat.test(mText) || sun.test(mText) || mon.test(mText) || tues.test(mText) || today.test(mText) || tomorrow.test(mText) || thurs.test(mText)) {
+                            if (thurs.test(mText)) {
+                                return googler;
+                            }
                             if (sat.test(mText)) {
                                 return ear;
                             }
@@ -146,6 +155,9 @@ class Bot {
                                 if (tomorrow.test(mText)) {
                                     date = date + 1;
                                 }
+                                if (date == 6) {
+                                    return googler;
+                                }
                                 if (date == 8) {
                                     return ear;
                                 }
@@ -159,10 +171,17 @@ class Bot {
                                     return nintendor;
                                 }
                                 else {
+                                    var req = null;
                                     if (date > 11) {
                                         return 'All events have concluded'
                                     }
-                                    return 'There are no events'
+                                    if (today.test(mText)) {
+                                        req = ' today.'
+                                    }
+                                    if (tomorrow.test(mText)) {
+                                        req = ' tomorrow.'
+                                    }
+                                    return 'There are no events'+req;
                                 }
                             }
                         }
