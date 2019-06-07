@@ -15,9 +15,17 @@ class Bot {
      * @return {string}
      */
     static checkMessage(message) {
-        function NowThen() {
+        function NowThen(eventd) {
+            var started = 'started at ';
+            var watch = 'watch live: ';
+            var already = 'has already performed, ';
+            var find = 'you might find playback on youtube: ';
             var hour = new Date().getHours();
             var minute = new Date().getMinutes();
+            var length = parseInt(eventd[6])+2;
+            if (eventd[7]) {
+                length = eventd[7];
+            }
             console.log('minute = ' + minute);
             var d = new Date().getDate();
             hour = parseInt(hour) - 5;
@@ -27,12 +35,14 @@ class Bot {
             var time = parseInt(hour, 10) + (parseInt(minute, 10)/60);
             time = time.toFixed(1);
             
-            // Saturday
-            if (d == 8 && time >= 11.5 && time < 14) {
-                ear = eat[0] + 'started at ' + eat[2] + 'watch live: ' + eat[3];
+            if (d == eventd[5] && time >= eventd[6] && time < length) {
+                return eventd[0] + started + eventd[2] + watch + eventd[3];
             }
-            if ((d == 6 && time > 14) || d > 6) {
-                ear = eat[0] + 'has already performed, ' + eat[2] + 'you might find playback on twitch: ' + eat[3];
+            if ((d == eventd[5] && time > length) || d > eventd[5]) {
+                return eventd[0] + already + eventd[2] + find + eventd[4];
+            }
+            if ((d == eventd[5] && time < eventd[6]) || d < eventd[5]) {
+                return eventd[0] + eventd[1] + eventd[2] + eventd[3];
             }
         }
         const mText = message.text;
@@ -73,33 +83,27 @@ class Bot {
         const all = /all/i;
         const every = /every/i;
 
-        // BASIC
+        // INFO
         var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        var eat = ['EA ','on Saturday, ','11:30AM CST - 6:30PM CEST ','https://twitch.tv/ea'];
-        var microt;
-        var digitalt;
-        var bethesdat;
-        var pcgamet;
-        var ubisoftt;
-        var squaret;
-        var nintendot;
-        var sonyt;
+        var eat = ['EA ','on Saturday, ','11:30AM CST - 6:30PM CEST ','https://twitch.tv/ea','https://www.youtube.com/user/EA',8,11.5,2];
+        var microt = ['Microsoft ','on Sunday, ','3PM CST - 10PM CEST ','https://www.twitch.tv/xbox','https://www.youtube.com/user/xbox',9,15];
+        var digitalt = ['Devolver Digitial ','on Sunday, ','9PM CST - 4AM CEST ','https://www.twitch.tv/devolverdigital','https://www.youtube.com/user/DevolverDigital',9,21];
+        var bethesdat = ['Bethesda ','on Sunday, ','7:30PM CST - 3:30AM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/user/BethesdaSoftworks',9,9.5];
+        var pcgamet = ['PC Gaming Show ','on Monday, ','12PM CST - 7PM CEST ','https://www.twitch.tv/pcgamer','https://www.youtube.com/user/pcgamer',10,12];
+        var ubisoftt = ['Ubisoft ','on Monday ','3PM CST - 10PM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/channel/UCBMvc6jvuTxH6TNo9ThpYjg',10,15];
+        var squaret = ['Square Enix ','on Monday, ','8PM CST - 3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
+        var nintendot = ['Nintendo ','on Tuesday, ','11AM CST - 6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
+        var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
-        // RESULT
-        var ear = eat[0] + eat[1] + eat[2] + eat[3];
-
-        // STARTS
-        const starts = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        const eas = 'EA on Saturday, 9:30AM PT - 6:30PM CEST, https://www.twitch.tv/ea';
-        const micros = 'Microsoft on Sunday, 1PM PT - 10PM CEST, https://www.twitch.tv/xbox';
-        const digitals = 'Devolver Digital on Sunday, 7PM PT - 4AM CEST, https://www.twitch.tv/devolverdigital';
-        const bethesdas = 'Bethesda on Sunday, 5:30PM PT - 3:30AM CEST, https://www.twitch.tv/bethesda';
-        const pcgames = 'PC Gaming Show on Monday, 10AM PT - 7PM CEST, https://www.twitch.tv/pcgamer';
-        const ubisofts = 'Ubisoft on Monday, 1PM PT - 10PM CEST, https://www.twitch.tv/bethesda';
-        const squares = 'Square Enix on Monday, 6PM PT - 3AM CEST, https://www.twitch.tv/squareenix';
-        const nintendos = 'Nintendo on Tuesday, 9AM PT - 6PM CEST, https://www.twitch.tv/nintendo';
-        const sonys = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
-
+        // FORMATTED
+        var ear = NowThen(eat);
+        var micror = NowThen(microt);
+        var digitalr = NowThen(digitalt);
+        var bethesdar = NowThen(bethesdat);
+        var pcgamer = NowThen(pcgamet);
+        var ubisoftr = NowThen(ubisoftt);
+        var squarer = NowThen(squaret);
+        var nintendor = NowThen(nintendot);
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
@@ -124,13 +128,13 @@ class Bot {
                                 return ear;
                             }
                             if (sun.test(mText)) {
-                                return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
+                                return micror+'\n\n'+bethesdar+'\n\n'+digitalr;
                             }
                             if (mon.test(mText)) {
-                                return ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet;
+                                return ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer;
                             }
                             if (tues.test(mText)) {
-                                return nintendot;
+                                return nintendor;
                             }
                             if (today.test(mText) || tomorrow.test(mText)) {
                                 if (tomorrow.test(mText)) {
@@ -140,13 +144,13 @@ class Bot {
                                     return ear;
                                 }
                                 if (date == 9) {
-                                    return microt+'\n\n'+bethesdat+'\n\n'+digitalt;
+                                    return micror+'\n\n'+bethesdar+'\n\n'+digitalr;
                                 }
                                 if (date == 10) {
-                                    return ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet;
+                                    return ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer;
                                 }
                                 if (date == 11) {
-                                    return nintendot;
+                                    return nintendor;
                                 }
                                 else {
                                     if (date > 11) {
@@ -159,31 +163,31 @@ class Bot {
                         // COMPANY TESTS
                         else {
                             if (all.test(mText) || every.test(mText)) {
-                                return ear+'\n\n'+microt+'\n\n'+bethesdat+'\n\n'+digitalt+'\n\n'+ubisoftt+'\n\n'+squaret+'\n\n'+pcgamet+'\n\n'+nintendot+'\n\n'+sonyt;
+                                return ear+'\n\n'+micror+'\n\n'+bethesdar+'\n\n'+digitalr+'\n\n'+ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer+'\n\n'+nintendor+'\n\n'+sonyt;
                             }
                             if (ea.test(mText)) {
                                 return ear;
                             }
                             if (micro.test(mText) || xbox.test(mText)) {
-                                return microt;
+                                return micror;
                             }
                             if (bethesda.test(mText)) {
-                                return bethesdat;
+                                return bethesdar;
                             }
                             if (digital.test(mText) || devolver.test(mText)) {
-                                return digitalt;
+                                return digitalr;
                             }
                             if (ubisoft.test(mText)) {
-                                return ubisoftt;
+                                return ubisoftr;
                             }
                             if (square.test(mText) || enix.test(mText)) {
-                                return squaret;
+                                return squarer;
                             }
                             if (pcgame.test(mText)) {
-                                return pcgamet;
+                                return pcgamer;
                             }
                             if (nintendo.test(mText)) {
-                                return nintendot;
+                                return nintendor;
                             }
                             if (sony.test(mText)) {
                                 return sonyt;
