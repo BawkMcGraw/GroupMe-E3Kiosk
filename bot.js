@@ -9,7 +9,7 @@ var groupid;
 class Bot {
     /**
      * Called when the bot receives a message.
-     *
+     *g
      * @static
      * @param {Object} message The message data incoming from GroupMe
      * @return {string}
@@ -95,14 +95,14 @@ class Bot {
         var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // FORMATTED
-        let ear = NowThen(eat);
-        let micror = NowThen(microt);
-        let digitalr = NowThen(digitalt);
-        let bethesdar = NowThen(bethesdat);
-        let pcgamer = NowThen(pcgamet);
-        let ubisoftr = NowThen(ubisoftt);
-        let squarer = NowThen(squaret);
-        let nintendor = NowThen(nintendot);
+        let ear;
+        let micror;
+        let digitalr;
+        let bethesdar;
+        let pcgamer;
+        let ubisoftr;
+        let squarer;
+        var nintendor;
 
         // Checks if message is posted by bot, to prevent spam, then processes bot logic.
         if (mText)
@@ -114,6 +114,14 @@ class Bot {
             else {
                 if (name.test(mText)) {
                     if (e3ex.test(mText)) {
+                        ear = NowThen(eat);
+                        micror = NowThen(microt);
+                        digitalr = NowThen(digitalt);
+                        bethesdar = NowThen(bethesdat);
+                        pcgamer = NowThen(pcgamet);
+                        ubisoftr = NowThen(ubisoftt);
+                        squarer = NowThen(squaret);
+                        nintendor = NowThen(nintendot);
                         if (start.test(mText) || begin.test(mText)) {
                             return startt;
                         }
