@@ -16,7 +16,6 @@ class Bot {
      */
     static checkMessage(message) {
         function NowThen(eventd) {
-            console.log(eventd);
             var started = 'started at ';
             var watch = 'watch live: ';
             var already = 'has already performed, ';
@@ -27,7 +26,6 @@ class Bot {
             if (eventd[7]) {
                 length = eventd[7];
             }
-            console.log('minute = ' + minute);
             var d = new Date().getDate();
             hour = parseInt(hour) - 5;
             if (hour < 0) {
