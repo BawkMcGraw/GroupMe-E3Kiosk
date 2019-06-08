@@ -41,13 +41,13 @@ class Bot {
             time = time.toFixed(1);
             
             if (d == eventd[5] && time >= eventd[6] && time < length) {
-                return eventd[0] + started + eventd[2] + watch + eventd[3];
+                return eventd[0] + started + eventd[2] + watch + '\n' + eventd[3];
             }
             if ((d == eventd[5] && time > length) || d > eventd[5]) {
-                return eventd[0] + already + eventd[2] + find + eventd[4];
+                return eventd[0] + already + eventd[2] + find + '\n' + eventd[4];
             }
             if ((d == eventd[5] && time < eventd[6]) || d < eventd[5]) {
-                return eventd[0] + eventd[1] + eventd[2] + eventd[3];
+                return eventd[0] + eventd[1] + eventd[2] + '\n' + eventd[3];
             }
         }
         const mText = message.text;
