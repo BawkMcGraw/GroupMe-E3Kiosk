@@ -158,8 +158,14 @@ class Bot {
                                 return nintendor;
                             }
                             if (today.test(mText) || tomorrow.test(mText)) {
+                                if (/33073287/.test(message.user_id)) {
+                                    h = parseInt(h) + 7;
+                                    if (h > 24) {
+                                        date = parseInt(date) + 1;
+                                    }
+                                }
                                 if (tomorrow.test(mText)) {
-                                    date = date + 1;
+                                    date = parseInt(date) + 1;
                                 }
                                 if (date == 6) {
                                     return googler;
