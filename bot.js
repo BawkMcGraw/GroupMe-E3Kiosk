@@ -4,6 +4,11 @@ var fs = require('fs');
 const https = require('https');
 console.log('Loaded... ');
 var date = new Date().getDate();
+var h = new Date().getHours();
+h = parseInt(h) - 5;
+if (h < 0) {
+    d = parseInt(d) - 1;
+}
 var groupid;
 
 class Bot {
@@ -30,6 +35,7 @@ class Bot {
             hour = parseInt(hour) - 5;
             if (hour < 0) {
                 hour = parseInt(hour) + 24;
+                d = parseInt(d) - 1;
             }
             var time = parseInt(hour, 10) + (parseInt(minute, 10)/60);
             time = time.toFixed(1);
