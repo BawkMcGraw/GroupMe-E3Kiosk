@@ -9,6 +9,7 @@ var d = new Date().getDate();
 h = parseInt(h) - 5;
 if (h < 0) {
     d = parseInt(d) - 1;
+    h = parseInt(h) + 24;
 }
 var groupid;
 
@@ -26,18 +27,12 @@ class Bot {
             var watch = 'watch live: ';
             var already = 'has already presented, ';
             var find = 'you might find playback on youtube: ';
-            var hour = new Date().getHours();
             var minute = new Date().getMinutes();
             var length = parseInt(eventd[6])+2;
             if (eventd[7]) {
                 length = eventd[7];
             }
-            hour = parseInt(hour) - 5;
-            if (hour < 0) {
-                hour = parseInt(hour) + 24;
-                d = parseInt(d) - 1;
-            }
-            var time = parseInt(hour, 10) + (parseInt(minute, 10)/60);
+            var time = parseInt(h, 10) + (parseInt(minute, 10)/60);
             time = time.toFixed(1);
             
             if (d == eventd[5] && time >= eventd[6] && time < length) {
@@ -162,6 +157,7 @@ class Bot {
                                     h = parseInt(h) + 7;
                                     if (h > 24) {
                                         date = parseInt(date) + 1;
+                                        h = parseInt(h) - 24;
                                     }
                                 }
                                 if (tomorrow.test(mText)) {
