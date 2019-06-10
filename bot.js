@@ -258,6 +258,7 @@ class Bot {
         const botReq = https.request(options, function(response) {
             if (response.statusCode !== 202) {
                 console.log('Bad status '+response.statusCode);
+                console.log(mText);
             }
         });
 
