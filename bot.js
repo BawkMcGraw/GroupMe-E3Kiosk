@@ -90,7 +90,7 @@ class Bot {
         var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
         var eat = ['EA ','on Saturday, ','11:30AM CST/6:30PM CEST ','https://twitch.tv/ea','https://www.youtube.com/user/EA',8,11.5,2];
         var microt = ['Microsoft ','on Sunday, ','3PM CST/10PM CEST ','https://www.twitch.tv/xbox','https://www.youtube.com/user/xbox',9,15];
-        var digitalt = ['Devolver Digitial ','on Sunday, ','9PM CST/4AM CEST ','https://www.twitch.tv/devolverdigital','https://www.youtube.com/user/DevolverDigital',9,21,22];
+        var digitalt = ['Devolver Digitial ','on Sunday, ','9PM CST/4AM CEST ','https://www.twitch.tv/devolverdigital','https://www.youtube.com/user/DevolverDigital',9,21];
         var bethesdat = ['Bethesda ','on Sunday, ','7:30PM CST/3:30AM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/user/BethesdaSoftworks',9,19.5];
         var pcgamet = ['PC Gaming Show ','on Monday, ','12PM CST/7PM CEST ','https://www.twitch.tv/pcgamer','https://www.youtube.com/user/pcgamer',10,12];
         var ubisoftt = ['Ubisoft ','on Monday ','3PM CST/10PM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/channel/UCBMvc6jvuTxH6TNo9ThpYjg',10,15];
