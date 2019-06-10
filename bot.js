@@ -3,7 +3,6 @@ require('dotenv').config();
 var fs = require('fs');
 const https = require('https');
 console.log('Loaded... ');
-var date = new Date().getDate();
 var h = new Date().getHours();
 var d = new Date().getDate();
 h = parseInt(h) - 5;
@@ -25,8 +24,8 @@ class Bot {
         function NowThen(eventd) {
             var started = 'started at ';
             var watch = 'watch live: ';
-            var already = 'has already presented, ';
-            var find = 'playback is on youtube: ';
+            var already = 'already presented, ';
+            var find = 'playback: ';
             var minute = new Date().getMinutes();
             var length = parseInt(eventd[6])+2;
             if (eventd[7]) {
@@ -97,7 +96,7 @@ class Bot {
         var squaret = ['Square Enix ','on Monday, ','8PM CST/3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
         var nintendot = ['Nintendo ','on Tuesday, ','11AM CST/6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
         var googlet = ['Google Stadia ','on Thursday, ','11AM CST/6PM CEST, ','https://www.youtube.com/watch?v=k-BbW6zAjL0','https://www.youtube.com/watch?v=k-BbW6zAjL0',6,11];
-        var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
+        var sonyt = 'Sony just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // FORMATTED
         var ear;
@@ -156,31 +155,31 @@ class Bot {
                                 if (/33073287/.test(message.user_id)) {
                                     h = parseInt(h) + 7;
                                     if (h > 24) {
-                                        date = parseInt(date) + 1;
+                                        d = parseInt(d) + 1;
                                         h = parseInt(h) - 24;
                                     }
                                 }
                                 if (tomorrow.test(mText)) {
-                                    date = parseInt(date) + 1;
+                                    d = parseInt(d) + 1;
                                 }
-                                if (date == 6) {
+                                if (d == 6) {
                                     return googler;
                                 }
-                                if (date == 8) {
+                                if (d == 8) {
                                     return ear;
                                 }
-                                if (date == 9) {
+                                if (d == 9) {
                                     return micror+'\n\n'+bethesdar+'\n\n'+digitalr;
                                 }
-                                if (date == 10) {
+                                if (d == 10) {
                                     return ubisoftr+'\n\n'+squarer+'\n\n'+pcgamer;
                                 }
-                                if (date == 11) {
+                                if (d == 11) {
                                     return nintendor;
                                 }
                                 else {
                                     var req = null;
-                                    if (date > 11) {
+                                    if (d > 11) {
                                         return 'All events have concluded'
                                     }
                                     if (today.test(mText)) {
