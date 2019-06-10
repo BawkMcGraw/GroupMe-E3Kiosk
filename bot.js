@@ -88,15 +88,15 @@ class Bot {
 
         // INFO
         var startt = 'E3 starts on Saturday, June 8th, and goes till Tuesday, June 11th.';
-        var eat = ['EA ','on Saturday, ','11:30AM CST - 6:30PM CEST ','https://twitch.tv/ea','https://www.youtube.com/user/EA',8,11.5,2];
-        var microt = ['Microsoft ','on Sunday, ','3PM CST - 10PM CEST ','https://www.twitch.tv/xbox','https://www.youtube.com/user/xbox',9,15];
-        var digitalt = ['Devolver Digitial ','on Sunday, ','9PM CST - 4AM CEST ','https://www.twitch.tv/devolverdigital','https://www.youtube.com/user/DevolverDigital',9,21];
-        var bethesdat = ['Bethesda ','on Sunday, ','7:30PM CST - 3:30AM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/user/BethesdaSoftworks',9,19.5];
-        var pcgamet = ['PC Gaming Show ','on Monday, ','12PM CST - 7PM CEST ','https://www.twitch.tv/pcgamer','https://www.youtube.com/user/pcgamer',10,12];
-        var ubisoftt = ['Ubisoft ','on Monday ','3PM CST - 10PM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/channel/UCBMvc6jvuTxH6TNo9ThpYjg',10,15];
-        var squaret = ['Square Enix ','on Monday, ','8PM CST - 3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
-        var nintendot = ['Nintendo ','on Tuesday, ','11AM CST - 6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
-        var googlet = ['Google Stadia ','on Thursday, ','11AM CST - 6PM CEST, ','https://www.youtube.com/watch?v=k-BbW6zAjL0','https://www.youtube.com/watch?v=k-BbW6zAjL0',6,11];
+        var eat = ['EA ','on Saturday, ','11:30AM CST/6:30PM CEST ','https://twitch.tv/ea','https://www.youtube.com/user/EA',8,11.5,2];
+        var microt = ['Microsoft ','on Sunday, ','3PM CST/10PM CEST ','https://www.twitch.tv/xbox','https://www.youtube.com/user/xbox',9,15];
+        var digitalt = ['Devolver Digitial ','on Sunday, ','9PM CST/4AM CEST ','https://www.twitch.tv/devolverdigital','https://www.youtube.com/user/DevolverDigital',9,21,22];
+        var bethesdat = ['Bethesda ','on Sunday, ','7:30PM CST/3:30AM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/user/BethesdaSoftworks',9,19.5];
+        var pcgamet = ['PC Gaming Show ','on Monday, ','12PM CST/7PM CEST ','https://www.twitch.tv/pcgamer','https://www.youtube.com/user/pcgamer',10,12];
+        var ubisoftt = ['Ubisoft ','on Monday ','3PM CST/10PM CEST ','https://www.twitch.tv/bethesda','https://www.youtube.com/channel/UCBMvc6jvuTxH6TNo9ThpYjg',10,15];
+        var squaret = ['Square Enix ','on Monday, ','8PM CST/3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
+        var nintendot = ['Nintendo ','on Tuesday, ','11AM CST/6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
+        var googlet = ['Google Stadia ','on Thursday, ','11AM CST/6PM CEST, ','https://www.youtube.com/watch?v=k-BbW6zAjL0','https://www.youtube.com/watch?v=k-BbW6zAjL0',6,11];
         var sonyt = 'Sony will not be at E3, instead they just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // FORMATTED
