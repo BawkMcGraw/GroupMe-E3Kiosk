@@ -5,6 +5,7 @@ const https = require('https');
 console.log('Loaded... ');
 var date = new Date().getDate();
 var h = new Date().getHours();
+var d = new Date().getDate();
 h = parseInt(h) - 5;
 if (h < 0) {
     d = parseInt(d) - 1;
@@ -31,7 +32,6 @@ class Bot {
             if (eventd[7]) {
                 length = eventd[7];
             }
-            var d = new Date().getDate();
             hour = parseInt(hour) - 5;
             if (hour < 0) {
                 hour = parseInt(hour) + 24;
