@@ -26,7 +26,7 @@ class Bot {
             var started = 'started at ';
             var watch = 'watch live: ';
             var already = 'has already presented, ';
-            var find = 'you might find playback on youtube: ';
+            var find = 'playback is on youtube: ';
             var minute = new Date().getMinutes();
             var length = parseInt(eventd[6])+2;
             if (eventd[7]) {
