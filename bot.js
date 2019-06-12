@@ -153,13 +153,6 @@ class Bot {
                             }
 
                             if (today.test(mText) || tomorrow.test(mText)) {
-                                if (/33073287/.test(message.user_id)) {
-                                    h = parseInt(h) + 7;
-                                    if (h > 24) {
-                                        d = parseInt(d) + 1;
-                                        h = parseInt(h) - 24;
-                                    }
-                                }
                                 if (tomorrow.test(mText)) {
                                     d = parseInt(d) + 1;
                                 }
@@ -244,16 +237,16 @@ class Bot {
     static sendMessage(mText) {
 
         // get botid from dev.groupme.com
-        var botId = "4720a34d2e45e88a60406cfa7e";
+        var botId = "";
 
         // get groupid from dev.groupme.com
         // insert like this:
         // const groupidex = /groupid/;
-        const groupidex = /41279538/;
+        const groupidex;
 
         if (groupidex) {
             if (groupidex.test(groupid)) {
-                botId = '26950a2d98969fcfb30ca4a3e5';
+                botId = '';
             }
         }
         const options = {
