@@ -244,16 +244,16 @@ class Bot {
     static sendMessage(mText) {
 
         // get botid from dev.groupme.com
-        var botId = "[botid]";
+        var botId = "4720a34d2e45e88a60406cfa7e";
 
         // get groupid from dev.groupme.com
         // insert like this:
         // const groupidex = /groupid/;
-        const groupidex;
+        const groupidex = /41279538/;
 
         if (groupidex) {
             if (groupidex.test(groupid)) {
-                botId = '[botid2]';
+                botId = '26950a2d98969fcfb30ca4a3e5';
             }
         }
         const options = {
