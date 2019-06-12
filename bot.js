@@ -95,7 +95,7 @@ class Bot {
         var squaret = ['Square Enix ','on Monday, ','8PM CST/3AM CEST ','https://www.twitch.tv/squareenix','https://www.youtube.com/user/SQEXMembersNA',10,20];
         var nintendot = ['Nintendo ','on Tuesday, ','11AM CST/6PM CEST, ','https://www.twitch.tv/nintendo','https://www.youtube.com/user/Nintendo',11,11];
         var googlet = ['Google Stadia ','on Thursday, ','11AM CST/6PM CEST, ','https://www.youtube.com/watch?v=k-BbW6zAjL0','https://www.youtube.com/watch?v=k-BbW6zAjL0',6,11];
-        var sonyt = 'Sony just did a bunch of directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
+        var sonyt = 'Sony did directs\: https://www.youtube.com/playlist?list=PLol_ykYs3OQ5hs75PIl_si3Vk1709vDT0';
 
         // VAR REFERENCES
         var ear;
