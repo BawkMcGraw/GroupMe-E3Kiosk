@@ -23,7 +23,7 @@ You must include its name in the request:
 
 I've already included this years schedule. in CST time (because that's relavent to my group) and CEST time, for my friend. I've also programed it to check the date and time, and change its response if an event is on-going or passed.
 
-If also super simplified updating this information year to year. You'll still have to stack the events per day (mon, tues, etc) yourself every year. But now its just updating 2 places instead of like 5. I've included notes so you know which array sections represent what information.
+If also super simplified updating this information year to year. You'll still have to stack the events per day (mon, tues, etc) yourself every year. But now its just updating 2 places instead of like 5. I've included notes so you know which array sections represent what information. I will also be working to make this process much easier and maybe even just do it through a website for next year.
 
 ## To-do
 
@@ -32,6 +32,9 @@ If also super simplified updating this information year to year. You'll still ha
 * add handler for request by date (8th, 9th, 10th, 6/6, etc).
 * add handler for emojis. Will definitely be sarcastic responses, no helpful emoji support.
 * add more event and publisher support such as Pokemon's event on Wednesday.
+* fix character limit reach if all events are past-tense (Will send multiple messages with 5 events per message).
+* make bot auto-remind beginning and end of events based solely on time.
+* convert all formatting to auto to simplify information input and make it easier for anyone to use
 
 ## License
 
